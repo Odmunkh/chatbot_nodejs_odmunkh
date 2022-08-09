@@ -16,10 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // init all web routes
 initWebRoute(app);
 
-let port = process.env.PORT || 8080;
-
-
-
+let port = process.env.PORT || 4000;
 
 
 app.listen(port, ()=>{
