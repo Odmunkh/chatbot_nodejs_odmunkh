@@ -89,7 +89,7 @@
 </div>
 
 <script>
-    var chatbox = document.getElementById('fb-customer-chat');
+    let chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "618046115339614");
     chatbox.setAttribute("attribution", "biz_inbox");
 </script>
@@ -104,7 +104,7 @@
     };
 
     (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
+        let js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
