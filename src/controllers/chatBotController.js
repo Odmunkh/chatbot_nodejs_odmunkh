@@ -100,7 +100,7 @@ let sendMessage = (sender_psid, response) => {
             // Send the HTTP request to the Messenger Platform
             request({
                 "uri": "https://graph.facebook.com/v6.0/me/messages",
-                "qs": {"access_token": PAGE_ACCESS_TOKEN},
+                "qs": {"access_token": process.env.FB_PAGE_TOKEN},
                 "method": "POST",
                 "json": request_body
             }, (err, res, body) => {
@@ -131,7 +131,7 @@ let sendTypingOn = (sender_psid) => {
             // Send the HTTP request to the Messenger Platform
             request({
                 "uri": "https://graph.facebook.com/v6.0/me/messages",
-                "qs": { "access_token": PAGE_ACCESS_TOKEN },
+                "qs": { "access_token": process.env.FB_PAGE_TOKEN },
                 "method": "POST",
                 "json": request_body
             }, (err, res, body) => {
@@ -159,7 +159,7 @@ let markMessageSeen = (sender_psid) => {
             // Send the HTTP request to the Messenger Platform
             request({
                 "uri": "https://graph.facebook.com/v6.0/me/messages",
-                "qs": { "access_token": PAGE_ACCESS_TOKEN },
+                "qs": { "access_token": process.env.FB_PAGE_TOKEN },
                 "method": "POST",
                 "json": request_body
             }, (err, res, body) => {
