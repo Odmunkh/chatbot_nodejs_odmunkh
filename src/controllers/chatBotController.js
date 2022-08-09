@@ -80,7 +80,7 @@ function callSendAPI(sender_psid, response) {
 }
 function handleMessage(sender_psid, received_message) {
     let response;
-
+console.log('aaaaaaaaaaaa' + received_message.text);
     // Checks if the message contains text
     if (received_message.text) {
         // Create the payload for a basic text message, which
