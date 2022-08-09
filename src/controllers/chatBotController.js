@@ -62,18 +62,21 @@ function callSendAPI(sender_psid, response) {
         "recipient": {
             "id": sender_psid
         },
-        "message": response
-    }
+        "message": response,
+    };
     request({
         "uri": "https://graph.facebook.com/v6.0/me/messages",
-        "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
+        "qs": {"access_token": process.env.FB_PAGE_TOKEN},
         "method": "POST",
         "json": request_body
     }, (err, res, body) => {
+        console.log(res)
+        console.log(body)
         if (!err) {
-            console.log('message sent!');
+            console.log("message sent!");
+            // resolve('done!')
         } else {
-            console.error("Unable to send message:" + err);
+            console.log("MESSAGE ILGEEHED ALDAA GARLAA" + err);
         }
     });
 }
