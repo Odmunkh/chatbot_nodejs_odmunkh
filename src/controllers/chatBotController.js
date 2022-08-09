@@ -59,13 +59,12 @@ let getWebhook = (req, res) => {
     }
 };
 
- function handleMessage(sender_psid, received_message) {
+function handleMessage(sender_psid, received_message) {
     // Check if the message contains text
     if (received_message.text === "hi") {
         let msg = {"text": `hi too`}
          sendMessage(sender_psid, msg);
     }
-
     if (received_message.text) {
         let response = {"text": `You sent the message: "${received_message.text}". Now send me an image!`}
          sendMessage(sender_psid, response);
@@ -101,12 +100,16 @@ let getWebhook = (req, res) => {
     }
 }
 
-
 function handlePostback(sender_psid, received_postback) {
     let response;
     // Get the payload for the postback
     let payload = received_postback.payload;
-
+    switch (payload) {
+        case "GET_STARTED":
+            let msg = {"text": `payload bna get started`}
+            sendMessage(sender_psid, msg);
+            break;
+    }
     // Set the response based on the postback payload
     if (payload === 'yes') {
         response = { "text": "Thanks!" }
@@ -115,6 +118,8 @@ function handlePostback(sender_psid, received_postback) {
     }
     // Send the message to acknowledge the postback
     sendMessage(sender_psid, response);
+
+
 }
 
 // Sends response messages via the Send API
