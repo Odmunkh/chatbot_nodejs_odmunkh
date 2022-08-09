@@ -4,22 +4,16 @@ import request from "request";
 let postWebhook = (req, res) =>{
     // Parse the request body from the POST
     let body = req.body;
-
     // Check the webhook event is from a Page subscription
     if (body.object === 'page') {
-
         // Iterate over each entry - there may be multiple if batched
         body.entry.forEach(function(entry) {
-
             // Gets the body of the webhook event
             let webhook_event = entry.messaging[0];
             console.log(webhook_event);
-
-
             // Get the sender PSID
             let sender_psid = webhook_event.sender.id;
             console.log('Sender PSID: ' + sender_psid);
-
             // Check if the event is a message or postback and
             // pass the event to the appropriate handler function
             if (webhook_event.message) {
@@ -65,19 +59,20 @@ let getWebhook = (req, res) => {
     }
 };
 
-function handleMessage(sender_psid, received_message) {
-    let response;
+ function handleMessage(sender_psid, received_message) {
     // Check if the message contains text
-    if (received_message.text) {
+    if (received_message.text === "hi") {
+        let msg = {"text": `hi too`}
+         sendMessage(sender_psid, msg);
+    }
 
-        // Create the payload for a basic text message
-        response = {
-            "text": `You sent the message: "${received_message.text}". Now send me an image!`
-        }
+    if (received_message.text) {
+        let response = {"text": `You sent the message: "${received_message.text}". Now send me an image!`}
+         sendMessage(sender_psid, response);
     } else if (received_message.attachments) {
         // Gets the URL of the message attachment
         let attachment_url = received_message.attachments[0].payload.url;
-        response = {
+        let response = {
             "attachment": {
                 "type": "template",
                 "payload": {
@@ -102,10 +97,8 @@ function handleMessage(sender_psid, received_message) {
                 }
             }
         }
-
+         sendMessage(sender_psid, response);
     }
-    sendMessage(sender_psid, response);
-
 }
 
 
