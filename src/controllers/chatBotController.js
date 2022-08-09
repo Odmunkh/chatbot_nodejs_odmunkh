@@ -62,7 +62,7 @@ let getWebhook = (req, res) => {
 function handleMessage(sender_psid, received_message) {
     // Check if the message contains text
     if (received_message.text){
-        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + received_message.text);
     }
 
 
