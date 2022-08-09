@@ -81,6 +81,8 @@
         <div class="stck"></div>
     </div>
 </div>
+
+
 <!-- Messenger Chat Plugin Code -->
 <div id="fb-root"></div>
 
@@ -89,7 +91,7 @@
 </div>
 
 <script>
-    let chatbox = document.getElementById('fb-customer-chat');
+    var chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "618046115339614");
     chatbox.setAttribute("attribution", "biz_inbox");
 </script>
@@ -104,13 +106,14 @@
     };
 
     (function(d, s, id) {
-        let js, fjs = d.getElementsByTagName(s)[0];
+        var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
+
 <style>
     body{
         background-color: #241E4E;
