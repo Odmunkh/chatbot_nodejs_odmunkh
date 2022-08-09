@@ -61,53 +61,16 @@ let getWebhook = (req, res) => {
 
 function handleMessage(sender_psid, received_message) {
     // Check if the message contains text
-    if (received_message.text){
+    if (received_message.text) {
         console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + received_message.text);
     }
-
-
-        if (received_message.text === "hi") {
+    if (received_message.text === "hi") {
         let msg = {"text": `hi too`}
-         sendMessage(sender_psid, msg);
-    }
-    if (received_message.text) {
-        let response = {"text": `You sent the message: "${received_message.text}". Now send me an image!`}
-         sendMessage(sender_psid, response);
-    } else if (received_message.attachments) {
-        // Gets the URL of the message attachment
-        let attachment_url = received_message.attachments[0].payload.url;
-        let response = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                        "title": "Is this the right picture?",
-                        "subtitle": "Tap a button to answer.",
-                        "image_url": attachment_url,
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Yes!",
-                                "payload": "yes",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "No!",
-                                "payload": "no",
-                            }
-                        ],
-                    }]
-                }
-            }
-        }
-         sendMessage(sender_psid, response);
+        sendMessage(sender_psid, msg);
     }
 }
 
 function handlePostback(sender_psid, received_postback) {
-
-    // Get the payload for the postback
     let payload = received_postback.payload;
     switch (payload) {
         case "GET_STARTED":
@@ -123,16 +86,6 @@ function handlePostback(sender_psid, received_postback) {
             sendMessage(sender_psid, msg2);
             break;
     }
-    // Set the response based on the postback payload
-
-    let response;
-    if (payload === 'yes') {
-        response = { "text": "Thanks!" }
-    } else if (payload === 'no') {
-        response = { "text": "Oops, try sending another image." }
-    }
-    // Send the message to acknowledge the postback
-    sendMessage(sender_psid, response);
 }
 
 // Sends response messages via the Send API
