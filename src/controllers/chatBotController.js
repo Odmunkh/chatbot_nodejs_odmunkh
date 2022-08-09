@@ -56,32 +56,41 @@ let getWebhook = (req, res) => {
     }
 };
 
-function callSendAPI(sender_psid, response) {
-    // Construct the message body
-    let request_body = {
-        "recipient": {
-            "id": sender_psid
-        },
-        "message": response
-    }
-
-    // Send the HTTP request to the Messenger Platform
-    request({
-        "uri": "https://graph.facebook.com/v7.0/me/messages",
-        "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
-        "method": "POST",
-        "json": request_body
-    }, (err, res, body) => {
-        if (!err) {
-            console.log('message sent!')
-        } else {
-            console.error("Unable to send message:" + err);
+function sendMessage (sender_psid, response) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let request_body = {
+                "recipient": {
+                    "id": sender_psid
+                },
+                "message": response,
+            };
+            // Send the HTTP request to the Messenger Platform
+            request({
+                "uri": "https://graph.facebook.com/v6.0/me/messages",
+                "qs": {"access_token": process.env.FB_PAGE_TOKEN},
+                "method": "POST",
+                "json": request_body
+            }, (err, res, body) => {
+                console.log(res)
+                console.log(body)
+                if (!err) {
+                    console.log("message sent!");
+                    resolve('done!')
+                } else {
+                    console.log("MESSAGE ILGEEHED ALDAA GARLAA" + err);
+                }
+            });
+        } catch (e) {
+            reject(e);
         }
     });
 }
-function handleMessage(sender_psid, received_message) {
+
+
+async function handleMessage(sender_psid, received_message) {
     let response;
-console.log('aaaaaaaaaaaa' + received_message.text);
+    console.log('aaaaaaaaaaaa' + received_message.text);
     // Checks if the message contains text
     if (received_message.text) {
         // Create the payload for a basic text message, which
@@ -120,10 +129,10 @@ console.log('aaaaaaaaaaaa' + received_message.text);
     }
 
     // Send the response message
-    callSendAPI(sender_psid, response);
+    await sendMessage(sender_psid, response);
 }
 
-function handlePostback(sender_psid, received_postback) {
+async function handlePostback(sender_psid, received_postback) {
     let response;
 
     // Get the payload for the postback
@@ -131,12 +140,12 @@ function handlePostback(sender_psid, received_postback) {
 
     // Set the response based on the postback payload
     if (payload === 'yes') {
-        response = { "text": "Thanks!" }
+        response = {"text": "Thanks!"}
     } else if (payload === 'no') {
-        response = { "text": "Oops, try sending another image." }
+        response = {"text": "Oops, try sending another image."}
     }
     // Send the message to acknowledge the postback
-    callSendAPI(sender_psid, response);
+    await sendMessage(sender_psid, response);
 }
 
 module.exports = {
