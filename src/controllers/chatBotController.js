@@ -114,6 +114,14 @@ function handlePostback(sender_psid, received_postback) {
             let msg = {"text": `payload bna get started`}
             sendMessage(sender_psid, msg);
             break;
+        case "menu":
+            let msg1 = {"text": `menu deer darlaa`}
+            sendMessage(sender_psid, msg1);
+            break;
+        case "call":
+            let msg2 = {"text": `lavlah deer darlaa`}
+            sendMessage(sender_psid, msg2);
+            break;
     }
     // Set the response based on the postback payload
 
