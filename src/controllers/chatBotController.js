@@ -289,7 +289,14 @@ async function handlePostback(sender_psid, received_postback) {
                         "elements": [
                             {
                                 "media_type": "video",
-                                "attachment_id": "598828745147179"
+                                "url": "https://www.facebook.com/oddesignbyodmunkh/videos/598828745147179",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://odbotheroku.herokuapp.com/",
+                                        "title": "View Website",
+                                    }
+                                ]
                             }
                         ]
                     }
