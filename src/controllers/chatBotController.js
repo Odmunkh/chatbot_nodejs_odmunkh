@@ -289,7 +289,7 @@ async function handlePostback(sender_psid, received_postback) {
                         "elements": [
                             {
                                 "media_type": "video",
-                                "attachment_id": "3406646612892461"
+                                "attachment_id": "598828745147179"
                             }
                         ]
                     }
