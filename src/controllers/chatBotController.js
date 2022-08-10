@@ -64,41 +64,35 @@ async function handleMessage(sender_psid, received_message) {
     await sendTypingOn(sender_psid);
     if (received_message.text === "hi") {
         let msg1 = {"text": `Сайн байна уу? Та дараах цэснээс сонголтоо хийнэ үү`}
-        await sendMessage(sender_psid, msg1);
-        let response = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "generic",
-                    "elements": [
-                        {
-                            "title": "И-баримт авах",
-                            "buttons": [
-                                {
-                                    "type": "postback",
-                                    "title": "Байгууллага",
-                                    "payload": "barimt_avah_baiguullaga",
-                                },
-                                {
-                                    "type": "postback",
-                                    "title": "Хувь хүн",
-                                    "payload": "barimt_avah_baiguullaga",
-                                },
-                                {
-                                    "type": "postback",
-                                    "title": "Автомат бүртгэл",
-                                    "payload": "ebarimt_avto_burtgel",
-                                },
-
-                            ],
-                        },
-                    ]
+        let msg2 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "sub_menu1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
                 }
             }
-        };
-        await sendMessage(sender_psid, response);
-
-
+        await sendMessage(sender_psid, msg1);
+        await sendMessage(sender_psid, msg2);
     }
 }
 
