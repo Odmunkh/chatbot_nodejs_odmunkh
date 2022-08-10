@@ -63,8 +63,38 @@ async function handleMessage(sender_psid, received_message) {
     await markMessageSeen(sender_psid);
     await sendTypingOn(sender_psid);
     if (received_message.text === "hi") {
-        let msg = {"text": `hi too`}
-        await sendMessage(sender_psid, msg);
+        let msg1 = {"text": `Сайн байна уу? Та дараах цэснээс сонголтоо хийнэ үү`}
+        let msg2 = {
+            "message":{
+                "attachment":{
+                    "type":"template",
+                    "payload":{
+                        "template_type":"generic",
+                        "elements":[
+                            {
+                                "title":"Menu 1",
+                                "image_url":"https://i.natgeofe.com/n/46b07b5e-1264-42e1-ae4b-8a021226e2d0/domestic-cat_thumb.jpg",
+                                "subtitle":"We have the right hat for everyone.",
+                                "buttons":[
+                                    {
+                                        "type":"web_url",
+                                        "url":"https://ddishtv.mn/",
+                                        "title":"View Website"
+                                    },
+                                    {
+                                        "type":"postback",
+                                        "title":"Start Chatting",
+                                        "payload":"sub_menu1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+        await sendMessage(sender_psid, msg1);
+        await sendMessage(sender_psid, msg2);
     }
 }
 
@@ -83,7 +113,7 @@ async function handlePostback(sender_psid, received_postback) {
             break;
         case "call":
             // let msg2 = {"text": `lavlah deer darlaa`}
-           await sendMessage(sender_psid, `lavlah deer darlaa`);
+            await sendMessage(sender_psid, `lavlah deer darlaa`);
             break;
     }
 }
