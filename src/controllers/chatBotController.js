@@ -63,7 +63,7 @@ async function handleMessage(sender_psid, received_message) {
     await markMessageSeen(sender_psid);
     await sendTypingOn(sender_psid);
     if (received_message.text === "hi") {
-        let msg1 = {"text": `Сайн байна уу? Та дараах цэснээс сонголтоо хийнэ үү`}
+        let msg1 = { "text": `Сайн байна уу? Та дараах цэснээс сонголтоо хийнэ үү` }
         let msg2 = {
                 "attachment": {
                     "type": "template",
@@ -267,9 +267,9 @@ async function handlePostback(sender_psid, received_postback) {
                         "text":"What do you want to do next?",
                         "buttons":[
                             {
-                                "type":"web_url",
-                                "url":"https://www.messenger.com",
-                                "title":"Visit Messenger"
+                                "type": "postback",
+                                "title": "GIF uzii",
+                                "payload": "gif"
                             },
                         ]
                     }
@@ -277,16 +277,26 @@ async function handlePostback(sender_psid, received_postback) {
             await sendMessage(sender_psid, msg1);
             break;
         case "call":
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://bit.ly/imageWelcome"
-                    }
-                }
-            };
+            let response2 = {"text": "call deer darlaa"};
             await sendMessage(sender_psid, response2);
             break;
+        case "gif":
+            let gif = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "media",
+                        "elements": [
+                            {
+                                "media_type": "video",
+                                "attachment_id": "3406646612892461"
+                            }
+                        ]
+                    }
+                }
+            }
+            await sendMessage(sender_psid, gif);
+
     }
 }
 
