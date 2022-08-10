@@ -64,35 +64,41 @@ async function handleMessage(sender_psid, received_message) {
     await sendTypingOn(sender_psid);
     if (received_message.text === "hi") {
         let msg1 = {"text": `Сайн байна уу? Та дараах цэснээс сонголтоо хийнэ үү`}
-        let msg2 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "generic",
-                        "elements": [
-                            {
-                                "title": "Menu 1",
-                                "image_url": "https://i.natgeofe.com/n/46b07b5e-1264-42e1-ae4b-8a021226e2d0/domestic-cat_thumb.jpg",
-                                "subtitle": "We have the right hat for everyone.",
-                                "buttons": [
-                                    {
-                                        "type": "web_url",
-                                        "url": "https://ddishtv.mn/",
-                                        "title": "View Website"
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "Start Chatting",
-                                        "payload": "sub_menu1"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+        await sendMessage(sender_psid, msg1);
+        let response = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [
+                        {
+                            "title": "И-баримт авах",
+                            "buttons": [
+                                {
+                                    "type": "postback",
+                                    "title": "Байгууллага",
+                                    "payload": "barimt_avah_baiguullaga",
+                                },
+                                {
+                                    "type": "postback",
+                                    "title": "Хувь хүн",
+                                    "payload": "barimt_avah_baiguullaga",
+                                },
+                                {
+                                    "type": "postback",
+                                    "title": "Автомат бүртгэл",
+                                    "payload": "ebarimt_avto_burtgel",
+                                },
+
+                            ],
+                        },
+                    ]
                 }
             }
-        await sendMessage(sender_psid, msg1);
-        await sendMessage(sender_psid, msg2);
+        };
+        await sendMessage(sender_psid, response);
+
+
     }
 }
 
