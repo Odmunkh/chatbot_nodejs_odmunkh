@@ -83,7 +83,7 @@ async function handleMessage(sender_psid, received_message) {
                                     {
                                         "type": "postback",
                                         "title": "Start Chatting",
-                                        "payload": "sub_menu1"
+                                        "payload": "menu"
                                     }
                                 ]
                             }
@@ -106,12 +106,31 @@ async function handlePostback(sender_psid, received_postback) {
             await sendMessage(sender_psid, msg);
             break;
         case "menu":
-            let msg1 = {"text": `menu deer darlaa`}
+            let msg1 = {
+                "attachment":{
+                    "type":"template",
+                    "payload":{
+                        "template_type":"button",
+                        "text":"What do you want to do next?",
+                        "buttons":[
+                            {
+                                "type":"web_url",
+                                "url":"https://www.messenger.com",
+                                "title":"Visit Messenger"
+                            },
+                            {
+                                "type":"web_url",
+                                "url":"https://www.messenger.com",
+                                "title":"Visit Messenger"
+                            },
+                        ]
+                    }
+                }}
             await sendMessage(sender_psid, msg1);
             break;
         case "call":
-            // let msg2 = {"text": `lavlah deer darlaa`}
-            await sendMessage(sender_psid, `lavlah deer darlaa`);
+            let msg2 = {"text": `lavlah deer darlaa`}
+            await sendMessage(sender_psid, msg2);
             break;
     }
 }
