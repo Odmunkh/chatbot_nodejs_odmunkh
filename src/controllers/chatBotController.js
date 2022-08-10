@@ -86,6 +86,159 @@ async function handleMessage(sender_psid, received_message) {
                                         "payload": "menu"
                                     }
                                 ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Menu 1",
+                                "image_url": "https://images.unsplash.com/photo-1659458388439-c08fd1d32695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "menu"
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -118,19 +271,21 @@ async function handlePostback(sender_psid, received_postback) {
                                 "url":"https://www.messenger.com",
                                 "title":"Visit Messenger"
                             },
-                            {
-                                "type":"web_url",
-                                "url":"https://www.messenger.com",
-                                "title":"Visit Messenger"
-                            },
                         ]
                     }
                 }}
             await sendMessage(sender_psid, msg1);
             break;
         case "call":
-            let msg2 = {"text": `lavlah deer darlaa`}
-            await sendMessage(sender_psid, msg2);
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://bit.ly/imageWelcome"
+                    }
+                }
+            };
+            await sendMessage(sender_psid, response2);
             break;
     }
 }
