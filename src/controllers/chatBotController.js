@@ -65,7 +65,7 @@ async function handleMessage(sender_psid, received_message) {
     if (received_message.text === "hi") {
         let msg1 = {"text": `Сайн байна уу? Та дараах цэснээс сонголтоо хийнэ үү`}
         let msg2 = {
-            "message"{
+            "message": {
                 "attachment": {
                     "type": "template",
                     "payload": {
