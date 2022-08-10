@@ -281,7 +281,7 @@ async function handlePostback(sender_psid, received_postback) {
             await sendMessage(sender_psid, response2);
             break;
         case "gif":
-            let gif = {
+            let gif1 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
@@ -302,7 +302,38 @@ async function handlePostback(sender_psid, received_postback) {
                     }
                 }
             }
-            await sendMessage(sender_psid, gif);
+            await sendMessage(sender_psid, gif1);
+            let gif2 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "media",
+                        "elements": [
+                            {
+                                "media_type": "image",
+                                "url": "https://www.facebook.com/oddesignbyodmunkh/photos/a.618046155339610/1428776677599883",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://odbotheroku.herokuapp.com/",
+                                        "title": "View Website",
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+            await sendMessage(sender_psid, gif2);
+            let gif3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://bit.ly/imageWelcome"
+                    }
+                }
+            };
+            await sendMessage(sender_psid, gif3);
     }
 }
 
