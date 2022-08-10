@@ -289,7 +289,7 @@ async function handlePostback(sender_psid, received_postback) {
                         "elements": [
                             {
                                 "media_type": "video",
-                                "url": "https://www.facebook.com/oddesignbyodmunkh/videos/598828745147179",
+                                "url": "https://www.facebook.com/ddishofficial/videos/3406646612892461",
                                 "buttons": [
                                     {
                                         "type": "web_url",
@@ -303,7 +303,6 @@ async function handlePostback(sender_psid, received_postback) {
                 }
             }
             await sendMessage(sender_psid, gif);
-
     }
 }
 
