@@ -65,26 +65,26 @@ async function handleMessage(sender_psid, received_message) {
     if (received_message.text === "hi") {
         let msg1 = {"text": `Сайн байна уу? Та дараах цэснээс сонголтоо хийнэ үү`}
         let msg2 = {
-            "message":{
-                "attachment":{
-                    "type":"template",
-                    "payload":{
-                        "template_type":"generic",
-                        "elements":[
+            "message"{
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
                             {
-                                "title":"Menu 1",
-                                "image_url":"https://i.natgeofe.com/n/46b07b5e-1264-42e1-ae4b-8a021226e2d0/domestic-cat_thumb.jpg",
-                                "subtitle":"We have the right hat for everyone.",
-                                "buttons":[
+                                "title": "Menu 1",
+                                "image_url": "https://i.natgeofe.com/n/46b07b5e-1264-42e1-ae4b-8a021226e2d0/domestic-cat_thumb.jpg",
+                                "subtitle": "We have the right hat for everyone.",
+                                "buttons": [
                                     {
-                                        "type":"web_url",
-                                        "url":"https://ddishtv.mn/",
-                                        "title":"View Website"
+                                        "type": "web_url",
+                                        "url": "https://ddishtv.mn/",
+                                        "title": "View Website"
                                     },
                                     {
-                                        "type":"postback",
-                                        "title":"Start Chatting",
-                                        "payload":"sub_menu1"
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "sub_menu1"
                                     }
                                 ]
                             }
