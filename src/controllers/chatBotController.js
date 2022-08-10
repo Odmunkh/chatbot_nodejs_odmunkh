@@ -82,8 +82,8 @@ async function handlePostback(sender_psid, received_postback) {
             await sendMessage(sender_psid, msg1);
             break;
         case "call":
-            let msg2 = {"text": `lavlah deer darlaa`}
-           await sendMessage(sender_psid, msg2);
+            // let msg2 = {"text": `lavlah deer darlaa`}
+           await sendMessage(sender_psid, `lavlah deer darlaa`);
             break;
     }
 }
